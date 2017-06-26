@@ -21,7 +21,7 @@ public class Menu {
     private String name;
 
     @ManyToMany
-    private List<Cheese> cheeses = new ArrayList<>();
+    private List<Cheese> cheeses;
 
     public Menu(){
 
@@ -32,7 +32,7 @@ public class Menu {
     }
 
     public void addItem(Cheese item){
-
+        cheeses.add(item);
     }
 
     public String getName() {
@@ -41,5 +41,13 @@ public class Menu {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public List<Cheese> getCheeses() {
+        return cheeses;
     }
 }
